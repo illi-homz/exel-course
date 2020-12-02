@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
@@ -45,6 +46,7 @@ const plugins = [
     filename: filename('css'),
   }),
 ]
+// if (isDev) plugins.push(new webpack.HotModuleReplacementPlugin())
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -63,7 +65,9 @@ module.exports = {
   },
   devtool: isDev ? 'source-map' : false,
   devServer: {
-    port: 3000,
+    contentBase: path.join(__dirname, 'src'),
+    watchContentBase: true,
+    port: 8080,
     hot: isDev,
   },
   target: isDev ? 'web' : 'browserslist',
