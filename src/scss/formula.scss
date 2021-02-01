@@ -11,6 +11,8 @@
     border-bottom: 1px solid $border-color;
     z-index: 5;
     background-color: #fff;
+    display: flex;
+    align-items: center;
     .info {
       font-size: 18px;
       text-align: center;

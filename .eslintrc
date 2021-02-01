@@ -8,7 +8,9 @@
   "rules": {
     "semi": "off",
     "arrow-parens": "off",
-    "require-jsdoc": "off"
+    "require-jsdoc": "off",
+    "object-curly-spacing": "off",
+    "no-trailing-spaces": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }

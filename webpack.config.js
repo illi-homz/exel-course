@@ -16,6 +16,9 @@ const jsLoaders = () => {
       loader: 'babel-loader',
       options: {
         presets: ['@babel/preset-env'],
+        plugins: [
+          '@babel/plugin-proposal-class-properties',
+        ],
       },
     },
   ]
@@ -67,7 +70,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'src'),
     watchContentBase: true,
-    port: 8080,
+    port: 3000,
     hot: isDev,
   },
   target: isDev ? 'web' : 'browserslist',
